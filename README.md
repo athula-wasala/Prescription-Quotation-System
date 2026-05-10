@@ -1,90 +1,87 @@
-#  Pharmacy Prescription Management System
+# 🏥 Prescription Quotation System (Laravel)
 
----
+## 🚀 Setup Instructions
 
-##  Project Setup
+git clone https://github.com/athula-wasala/Prescription-Quotation-System.git
+cd Prescription-Quotation-System
 
-### 1. Clone Project
-git clone <repo-url>
-
-### 2. Install Dependencies
 composer install
 
-### 3. Environment Setup
 cp .env.example .env
-Update DB details in .env
-
-### 4. Generate Key
 php artisan key:generate
 
-### 5. Run Migrations
-php artisan migrate
-
-### 6. Run Seeder
-php artisan db:seed
-OR
-php artisan db:seed --class=RoleSeeder
-
-### 7. Storage Link
 php artisan storage:link
 
-### 8. Run Server
+php artisan migrate
+php artisan db:seed
+
+php artisan config:clear
+
+npm install
+npm run dev
+
 php artisan serve
 
----
+
+## 👤 Demo Login Details
+
+Admin:
+admin@test.com
+password: test@123
+
+Pharmacy:
+pharmacy@test.com
+password: test@123
+
+Customer:
+customer@test.com
+password: test@123
+
 
 ## 📧 Mail Setup (Mailpit)
 
-MAIL_HOST=127.0.0.1  
-MAIL_PORT=1025  
+MAIL_HOST=127.0.0.1
+MAIL_PORT=1025
 
 Mail UI:
 http://127.0.0.1:8025
 
----
+Used for:
+- Prescription notifications
+- Quotation emails
+- Laravel notifications system
 
-## 👨‍💻 Developer Info
 
-- Framework: Laravel 10+
-- Language: PHP 8+
-- Database: MySQL
-- UI: Blade + Tailwind
-- Auth: Laravel Auth
-- Roles: Spatie Permission
+## 🔐 Permission System
 
----
+This project uses Spatie Laravel Permission package for role-based access control (RBAC).
 
-## 🧪 Testing
+Roles:
+- Admin
+- Pharmacy
+- Customer
 
-### Test Users:
-- Admin → manage users
-- Pharmacy → create quotations
-- Customer → upload prescriptions
+Features:
+- Role management
+- Route protection
+- Access control
 
-### Test Flow:
-1. Register user
-2. Assign role
-3. Login
-4. Test features based on role
 
----
+## 🔄 System Flow
 
-## 🎯 System Flow
+Customer uploads prescription → Pharmacy creates quotation → Customer accepts/rejects → Notification sent via Mailpit
 
-register → login → role check → dashboard → actions
 
----
+## 🎯 Features
 
-## 📌 Key Features
+- Role-based authentication (RBAC)
+- Prescription upload system
+- Quotation management
+- Email notifications (Mailpit)
+- Status filtering (Pending / Accepted / Rejected)
+- Image upload support
 
-✔ Role-based access (Admin, Pharmacy, Customer)  
-✔ Prescription upload system  
-✔ Quotation system  
-✔ Email notifications (Mailpit)  
-✔ Status filtering (Pending / Accepted / Rejected)  
 
----
+## 🚀 Summary Flow
 
-## 🚀 Summary Command Flow
-
-clone → install → env → key → migrate → seed → storage → serve
+clone → install → env → key → storage → migrate → seed → npm install → dev → serve
